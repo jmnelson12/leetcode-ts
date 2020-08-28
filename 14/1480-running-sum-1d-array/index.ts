@@ -40,6 +40,17 @@ function runningSum(nums: number[]): number[] {
   return results
 }
 
+console.time('attempt 1')
 console.log(runningSum([1, 2, 3, 4]))
+console.timeEnd('attempt 1')
+console.log()
+
+console.time('attempt 2')
 console.log(runningSum([1, 1, 1, 1, 1]))
+console.timeEnd('attempt 2')
+console.log()
+
+console.time('attempt 3')
 console.log(runningSum([3, 1, 2, 10, 1]))
+console.timeEnd('attempt 3')
+console.log()

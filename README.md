@@ -2,6 +2,8 @@
 
 All solved leetcode problems. (WIP)
 
+Starting on the free ones.
+
 Problems are done in TypeScript if possible, otherwise JavaScript.
 
 ## Structure
