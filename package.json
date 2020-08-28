@@ -1,0 +1,20 @@
+{
+  "name": "leetcode-ts",
+  "version": "1.0.0",
+  "description": "All solved leetcode problems. (WIP)",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc $INIT_CWD/index.ts --outFile $INIT_CWD/compiled.js --removeComments"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmnelson12/leetcode-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmnelson12/leetcode-ts/issues"
+  },
+  "homepage": "https://github.com/jmnelson12/leetcode-ts#readme"
+}
