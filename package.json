@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc $INIT_CWD/index.ts --outFile $INIT_CWD/compiled.js --removeComments",
+    "execute": "node $INIT_CWD/compiled.js",
     "add-commit": "git add . && git commit -m \"${INIT_CWD##*/}\""
   },
   "repository": {
