@@ -9,15 +9,15 @@ function runningSum(nums) {
     }
     return results;
 }
-console.time('attempt 1');
+console.time('runtime');
 console.log(runningSum([1, 2, 3, 4]));
-console.timeEnd('attempt 1');
+console.timeEnd('runtime');
 console.log();
-console.time('attempt 2');
+console.time('runtime');
 console.log(runningSum([1, 1, 1, 1, 1]));
-console.timeEnd('attempt 2');
+console.timeEnd('runtime');
 console.log();
-console.time('attempt 3');
+console.time('runtime');
 console.log(runningSum([3, 1, 2, 10, 1]));
-console.timeEnd('attempt 3');
+console.timeEnd('runtime');
 console.log();

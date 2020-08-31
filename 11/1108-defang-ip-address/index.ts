@@ -23,12 +23,12 @@ function defangIPaddr(address: string): string {
   return address.replace(/[.]/g, '[.]')
 }
 
-console.time('attempt 1')
+console.time('runtime')
 console.log(defangIPaddr('1.1.1.1'))
-console.timeEnd('attempt 1')
+console.timeEnd('runtime')
 console.log()
 
-console.time('attempt 2')
+console.time('runtime')
 console.log(defangIPaddr('255.100.50.0'))
-console.timeEnd('attempt 2')
+console.timeEnd('runtime')
 console.log()

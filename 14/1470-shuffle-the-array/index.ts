@@ -38,19 +38,19 @@ function shuffle(nums: number[], n: number): number[] {
   return results
 }
 
-console.time('attempt 1')
+console.time('runtime')
 console.log(shuffle([2, 5, 1, 3, 4, 7], 3))
-console.timeEnd('attempt 1')
+console.timeEnd('runtime')
 console.log()
 
-console.time('attempt 2')
+console.time('runtime')
 console.log(shuffle([1, 2, 3, 4, 4, 3, 2, 1], 4))
-console.timeEnd('attempt 2')
+console.timeEnd('runtime')
 console.log()
 
-console.time('attempt 3')
+console.time('runtime')
 console.log(shuffle([1, 1, 2, 2], 2))
-console.timeEnd('attempt 3')
+console.timeEnd('runtime')
 console.log()
 
 // TODO: second attempt - Figure Out Shuffle In-Place
