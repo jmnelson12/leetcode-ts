@@ -11,15 +11,15 @@ function numberOfSteps(num) {
     }
     return steps;
 }
-console.time('attempt 1');
+console.time('runtime');
 console.log(numberOfSteps(14));
-console.timeEnd('attempt 1');
+console.timeEnd('runtime');
 console.log();
-console.time('attempt 2');
+console.time('runtime');
 console.log(numberOfSteps(8));
-console.timeEnd('attempt 2');
+console.timeEnd('runtime');
 console.log();
-console.time('attempt 3');
+console.time('runtime');
 console.log(numberOfSteps(1000000));
-console.timeEnd('attempt 3');
+console.timeEnd('runtime');
 console.log();

@@ -34,12 +34,12 @@ function numJewelsInStones(J: string, S: string): number {
   return total
 }
 
-console.time('attempt 1')
+console.time('runtime')
 console.log(numJewelsInStones('aA', 'aAAbbbb'))
-console.timeEnd('attempt 1')
+console.timeEnd('runtime')
 console.log()
 
-console.time('attempt 2')
+console.time('runtime')
 console.log(numJewelsInStones('z', 'ZZ'))
-console.timeEnd('attempt 2')
+console.timeEnd('runtime')
 console.log()

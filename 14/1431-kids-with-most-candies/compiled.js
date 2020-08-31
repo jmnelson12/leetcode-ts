@@ -13,15 +13,15 @@ function kidsWithCandies(candies, extraCandies) {
     }
     return results;
 }
-console.time('attempt 1');
+console.time('runtime');
 console.log(kidsWithCandies([2, 3, 5, 1, 3], 3));
-console.timeEnd('attempt 1');
+console.timeEnd('runtime');
 console.log();
-console.time('attempt 2');
+console.time('runtime');
 console.log(kidsWithCandies([4, 2, 1, 1, 2], 1));
-console.timeEnd('attempt 2');
+console.timeEnd('runtime');
 console.log();
-console.time('attempt 3');
+console.time('runtime');
 console.log(kidsWithCandies([12, 1, 12], 10));
-console.timeEnd('attempt 3');
+console.timeEnd('runtime');
 console.log();

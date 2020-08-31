@@ -14,15 +14,15 @@ function numIdenticalPairs(nums) {
         return acc + hashMap[key].count;
     }, 0);
 }
-console.time('attempt 1');
+console.time('runtime');
 console.log(numIdenticalPairs([1, 2, 3, 1, 1, 3]));
-console.timeEnd('attempt 1');
+console.timeEnd('runtime');
 console.log();
-console.time('attempt 2');
+console.time('runtime');
 console.log(numIdenticalPairs([1, 1, 1, 1]));
-console.timeEnd('attempt 2');
+console.timeEnd('runtime');
 console.log();
-console.time('attempt 3');
+console.time('runtime');
 console.log(numIdenticalPairs([1, 2, 3]));
-console.timeEnd('attempt 3');
+console.timeEnd('runtime');
 console.log();
