@@ -4,7 +4,7 @@
   "description": "All solved leetcode problems. (WIP)",
   "main": "index.js",
   "scripts": {
-    "compile": "tsc $INIT_CWD/index.ts --outFile $INIT_CWD/compiled.js --removeComments -t 'ES5' --lib 'es6,dom,es2017'",
+    "compile": "tsc $INIT_CWD/index.ts --outFile $INIT_CWD/compiled.js --removeComments -t 'ES5' --lib 'es6,dom,es2017' --downlevelIteration",
     "execute": "node $INIT_CWD/compiled.js",
     "add-commit": "git add . && git commit -m \"${INIT_CWD##*/}\""
   },
