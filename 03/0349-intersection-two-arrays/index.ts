@@ -1,5 +1,5 @@
 // difficulty: easy
-// link: https://leetcode.com/explore/learn/card/hash-table/183/combination-with-other-algorithms/1105/
+// link: https://leetcode.com/problems/intersection-of-two-arrays
 
 /*
   Example 1:
