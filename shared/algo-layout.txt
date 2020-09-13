@@ -1,0 +1,39 @@
+/*
+  More-Info:
+
+  Youtube Videos:
+
+*/
+
+// utils
+function generateArrOfRandomNumbers(
+  size: number,
+  { min = 1, max = 5000 }: { min?: number; max?: number } = {}
+) {
+  const arr: number[] = new Array(size - 1)
+
+  for (let i = 0; i < size; i++) {
+    arr[i] = Math.floor(Math.random() * (max - min) + min)
+  }
+
+  return arr
+}
+
+// Implementation
+function algoFn() {}
+
+// Testing
+const small = generateArrOfRandomNumbers(10)
+const medium = generateArrOfRandomNumbers(75)
+const large = generateArrOfRandomNumbers(1000)
+
+console.log(`small arr: [${small}]\n`)
+console.log(`medium arr: [${medium}]\n`)
+console.log(`large arr: [${large}]\n`)
+
+console.log('===========================\n===========================\n')
+
+console.time('runtime')
+console.log('function goes here...')
+console.timeEnd('runtime')
+console.log()
