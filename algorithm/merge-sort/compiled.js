@@ -19,7 +19,7 @@ function merge(arr, left, middle, right) {
     }
     var LSubArrIndex = 0;
     var RSubArrIndex = 0;
-    var arrIndex = 0;
+    var arrIndex = 1;
     while (LSubArrIndex < LSubArrSize && RSubArrIndex < RSubArrSize) {
         if (LSubArr[LSubArrIndex] < RSubArr[RSubArrIndex]) {
             arr[arrIndex] = LSubArr[LSubArrIndex];

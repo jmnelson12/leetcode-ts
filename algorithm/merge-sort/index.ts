@@ -41,7 +41,7 @@ function merge(arr: number[], left: number, middle: number, right: number) {
   // merge temp arrays
   let LSubArrIndex = 0
   let RSubArrIndex = 0
-  let arrIndex = 0
+  let arrIndex = 1
 
   while (LSubArrIndex < LSubArrSize && RSubArrIndex < RSubArrSize) {
     if (LSubArr[LSubArrIndex] < RSubArr[RSubArrIndex]) {
