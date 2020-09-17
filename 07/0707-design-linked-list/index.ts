@@ -1,3 +1,6 @@
+// difficulty: medium
+// link: https://leetcode.com/problems/design-linked-list
+
 class LinkedListNode {
   public val: number
   public next: LinkedListNode | null
@@ -80,18 +83,19 @@ class MyLinkedList {
     }
 
     // Add a node of value val before the index-th node in the linked list.
-    let prevNode: LinkedListNode | null = null
-    let currNode = this.head
+    let currentIndex = 0
+    let currentNode: LinkedListNode | null = this.head
 
-    while (index && currNode) {
-      prevNode = currNode
-      currNode = currNode?.next
-      index--
+    while (currentNode) {
+      if (currentIndex === index - 1) {
+        const newNode = new LinkedListNode(val, currentNode.next)
+        currentNode.next = newNode
+        this.size++
+        return
+      }
+      currentNode = currentNode.next
+      currentIndex++
     }
-
-    if (prevNode) prevNode.next = new LinkedListNode(val, currNode)
-
-    this.size++
   }
 
   deleteAtIndex(index: number): void {
@@ -105,22 +109,21 @@ class MyLinkedList {
       return
     }
 
-    let prevNode: any = null
-    let currNode: any = this.head
+    let currentIndex = 0
+    let currentNode: LinkedListNode | null = this.head
 
-    while (index && currNode) {
-      prevNode = currNode
-      currNode = currNode?.next
-      index--
+    while (currentNode) {
+      if (currentIndex === index - 1) {
+        currentNode.next = currentNode.next?.next || null
+        if (!currentNode.next) {
+          this.tail = currentNode
+        }
+        this.size--
+        return
+      }
+      currentNode = currentNode.next
+      currentIndex++
     }
-
-    if (prevNode) {
-      prevNode.next = currNode?.next
-    } else {
-      this.head = currNode?.next
-    }
-
-    this.size--
   }
 }
 
@@ -145,8 +148,8 @@ class MyLinkedList {
 // linkedList2.addAtIndex(5, 0)
 // linkedList2.addAtHead(6)
 
-const linkedList3 = new MyLinkedList()
-linkedList3.addAtIndex(0, 10)
-linkedList3.addAtIndex(0, 20)
-linkedList3.addAtIndex(1, 30)
-console.log(JSON.stringify(linkedList3))
+// const linkedList3 = new MyLinkedList()
+// linkedList3.addAtIndex(0, 10)
+// linkedList3.addAtIndex(0, 20)
+// linkedList3.addAtIndex(1, 30)
+// console.log(JSON.stringify(linkedList3))

@@ -24,7 +24,6 @@ var MyLinkedList = (function () {
             currentNode = currentNode === null || currentNode === void 0 ? void 0 : currentNode.next;
             currentIndex++;
         }
-        return -1;
     };
     MyLinkedList.prototype.addAtHead = function (val) {
         var newNode = new LinkedListNode(val);
@@ -60,41 +59,44 @@ var MyLinkedList = (function () {
             this.addAtHead(val);
             return;
         }
-        var prevNode = null;
-        var currNode = this.head;
-        while (index && currNode) {
-            prevNode = currNode;
-            currNode = currNode === null || currNode === void 0 ? void 0 : currNode.next;
-            index--;
+        var currentIndex = 0;
+        var currentNode = this.head;
+        while (currentNode) {
+            if (currentIndex === index - 1) {
+                var newNode = new LinkedListNode(val, currentNode.next);
+                currentNode.next = newNode;
+                this.size++;
+                return;
+            }
+            currentNode = currentNode.next;
+            currentIndex++;
         }
-        if (prevNode)
-            prevNode.next = new LinkedListNode(val, currNode);
-        this.size++;
     };
     MyLinkedList.prototype.deleteAtIndex = function (index) {
+        var _a, _b;
         if (index >= this.size || index < 0)
             return;
         if (index === 0) {
-            this.head = this.head.next;
+            this.head = ((_a = this.head) === null || _a === void 0 ? void 0 : _a.next) || null;
             this.size--;
             if (this.size === 0)
                 this.tail = null;
             return;
         }
-        var prevNode = null;
-        var currNode = this.head;
-        while (index && currNode) {
-            prevNode = currNode;
-            currNode = currNode === null || currNode === void 0 ? void 0 : currNode.next;
-            index--;
+        var currentIndex = 0;
+        var currentNode = this.head;
+        while (currentNode) {
+            if (currentIndex === index - 1) {
+                currentNode.next = ((_b = currentNode.next) === null || _b === void 0 ? void 0 : _b.next) || null;
+                if (!currentNode.next) {
+                    this.tail = currentNode;
+                }
+                this.size--;
+                return;
+            }
+            currentNode = currentNode.next;
+            currentIndex++;
         }
-        if (prevNode) {
-            prevNode.next = currNode === null || currNode === void 0 ? void 0 : currNode.next;
-        }
-        else {
-            this.head = currNode === null || currNode === void 0 ? void 0 : currNode.next;
-        }
-        this.size--;
     };
     return MyLinkedList;
 }());
