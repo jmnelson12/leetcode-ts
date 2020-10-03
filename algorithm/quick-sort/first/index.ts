@@ -1,13 +1,11 @@
 /*
-  More-Info:
-    - https://www.geeksforgeeks.org/quick-sort/
-    - (Lomuto) https://en.wikipedia.org/wiki/Quicksort#Lomuto_partition_scheme
-    - (Hoare) https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme
+  Space Complexity:
+    in-place sorting
 
-  Youtube Videos:
-    - https://www.youtube.com/watch?v=eqo2LxRADhU
-    - https://www.youtube.com/watch?v=COk73cpQbFQ
-    - https://www.youtube.com/watch?v=SLauY6PpjW4
+  Time Complexity:
+    Avg: O(n log n)
+    Worst: o(n^2)
+
 */
 
 // utils
@@ -25,35 +23,33 @@ function generateArrOfRandomNumbers(
 }
 
 function swap(arr: number[], i: number, j: number) {
-  ;[arr[i], arr[j]] = [arr[j], arr[i]]
+  let temp = arr[i]
+  arr[i] = arr[j]
+  arr[j] = temp
 }
 
 // Implementation
-function LPartition(arr: number[], start: number, end: number): number {
+function partition(arr: number[], start: number, end: number): number {
   const pivotValue = arr[end]
-  let pivotIndex = start
+  let swapIndex = start
 
   for (let i = start; i < end; i++) {
     if (arr[i] < pivotValue) {
-      swap(arr, i, pivotIndex)
-      pivotIndex++
+      swap(arr, swapIndex, i)
+      swapIndex++
     }
   }
 
-  swap(arr, end, pivotIndex)
+  swap(arr, swapIndex, end)
 
-  return pivotIndex
+  return swapIndex
 }
-
-function quickSort(arr: number[], start: number, end: number) {
+function quickSort(arr: number[], start: number, end: number): void {
   if (start >= end) return
 
-  let index = LPartition(arr, start, end)
-
+  let index = partition(arr, start, end)
   quickSort(arr, start, index - 1)
   quickSort(arr, index + 1, end)
-
-  return arr
 }
 
 // Testing
@@ -68,16 +64,19 @@ console.log(`large arr: [${large}]\n`)
 console.log('===========================\n===========================\n')
 
 console.time('runtime')
-console.log(`sorted small arr: [${quickSort(small, 0, small.length - 1)}]`)
+quickSort(small, 0, small.length - 1)
+console.log(`small sorted: [${small}]`)
 console.timeEnd('runtime')
 console.log()
 
 console.time('runtime')
-console.log(`sorted medium arr: [${quickSort(medium, 0, medium.length - 1)}]`)
+quickSort(medium, 0, medium.length - 1)
+console.log(`medium sorted: [${medium}]`)
 console.timeEnd('runtime')
 console.log()
 
 console.time('runtime')
-console.log(`sorted large arr: [${quickSort(large, 0, large.length - 1)}]`)
+quickSort(large, 0, large.length - 1)
+console.log(`large sorted: [${large}]`)
 console.timeEnd('runtime')
 console.log()

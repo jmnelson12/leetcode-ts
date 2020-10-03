@@ -1,7 +1,9 @@
 /*
-  More-Info:
+  Space Complexity:
 
-  Youtube Videos:
+  Time Complexity:
+    Avg:
+    Worst:
 
 */
 

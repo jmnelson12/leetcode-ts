@@ -1,0 +1,32 @@
+/*
+
+  What Is It:
+
+  When To Use:
+
+  Space Complexity:
+
+  Time Complexity:
+    Access:
+      Avg:
+      Worst:
+
+    Search:
+      Avg:
+      Worst:
+
+    Insert:
+      Avg:
+      Worst:
+
+    Delete:
+      Avg:
+      Worst:
+
+*/
+
+class Something {
+  /* --------------------------------- FIELDS --------------------------------- */
+  /* --------------------------- GETTERS AND SETTERS -------------------------- */
+  /* --------------------------------- METHODS -------------------------------- */
+}
