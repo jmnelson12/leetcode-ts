@@ -30,13 +30,13 @@
 */
 
 function restoreString(s: string, indices: number[]): string {
-  let output = new Array(s.length)
+  let result = ''
 
   for (let i = 0; i < indices.length; i++) {
-    output[indices[i]] = s.charAt(i)
+    result += s.charAt(indices.indexOf(i))
   }
 
-  return output.join('')
+  return result
 }
 
 console.time('runtime')
