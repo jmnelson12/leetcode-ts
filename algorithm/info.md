@@ -1,0 +1,17 @@
+# Algorithms
+
+- quick sort: [ x ] [ ] [ ]
+- merge sort: [ ] [ ] [ ]
+- insertion sort: [ ] [ ] [ ]
+- binary search: [ ] [ ] [ ]
+- depth first search: [ ] [ ] [ ]
+- breadth first search: : [ ] [ ] [ ]
+- topological sort: [ ] [ ] [ ]
+- dijkstra's: [ ] [ ] [ ]
+- bellman ford: [ ] [ ] [ ]
+- bucket sort: [ ] [ ] [ ]
+- radix sort: [ ] [ ] [ ]
+- heap sort: [ ] [ ] [ ]
+- floyd warshall: [ ] [ ] [ ]
+- prims: [ ] [ ] [ ]
+- kruskal's: [ ] [ ] [ ]
