@@ -41,6 +41,23 @@ function peakIndexInMountainArrayJsMethods(arr: number[]): number {
   return arr.indexOf(Math.max(...arr))
 }
 
+function peakIndexInMountainArrayBinarySearch(
+  arr: number[],
+  start = 0,
+  end = arr.length - 1
+): number {
+  if (!arr.length) return -1
+
+  const mid = Math.round((start + end) / 2)
+
+  if (arr[mid] < arr[mid - 1])
+    return peakIndexInMountainArrayBinarySearch(arr, start, mid)
+  if (arr[mid] < arr[mid + 1])
+    return peakIndexInMountainArrayBinarySearch(arr, mid, end)
+
+  return mid
+}
+
 // no js method
 console.time('runtime')
 console.log(peakIndexInMountainArray([0, 1, 0]))
@@ -73,6 +90,37 @@ console.log()
 console.time('runtime')
 console.log(
   peakIndexInMountainArrayJsMethods([24, 69, 100, 99, 79, 78, 67, 36, 26, 19])
+)
+console.timeEnd('runtime')
+console.log()
+
+console.log('------')
+
+// binary search method
+console.time('runtime')
+console.log(peakIndexInMountainArrayBinarySearch([0, 1, 0]))
+console.timeEnd('runtime')
+console.log()
+
+console.time('runtime')
+console.log(peakIndexInMountainArrayBinarySearch([0, 2, 1, 0]))
+console.timeEnd('runtime')
+console.log()
+
+console.time('runtime')
+console.log(
+  peakIndexInMountainArrayBinarySearch([
+    24,
+    69,
+    100,
+    99,
+    79,
+    78,
+    67,
+    36,
+    26,
+    19,
+  ])
 )
 console.timeEnd('runtime')
 console.log()

@@ -32,6 +32,18 @@ function peakIndexInMountainArray(arr) {
 function peakIndexInMountainArrayJsMethods(arr) {
     return arr.indexOf(Math.max.apply(Math, __spread(arr)));
 }
+function peakIndexInMountainArrayBinarySearch(arr, start, end) {
+    if (start === void 0) { start = 0; }
+    if (end === void 0) { end = arr.length - 1; }
+    if (!arr.length)
+        return -1;
+    var mid = Math.round((start + end) / 2);
+    if (arr[mid] < arr[mid - 1])
+        return peakIndexInMountainArrayBinarySearch(arr, start, mid);
+    if (arr[mid] < arr[mid + 1])
+        return peakIndexInMountainArrayBinarySearch(arr, mid, end);
+    return mid;
+}
 console.time('runtime');
 console.log(peakIndexInMountainArray([0, 1, 0]));
 console.timeEnd('runtime');
@@ -55,5 +67,29 @@ console.timeEnd('runtime');
 console.log();
 console.time('runtime');
 console.log(peakIndexInMountainArrayJsMethods([24, 69, 100, 99, 79, 78, 67, 36, 26, 19]));
+console.timeEnd('runtime');
+console.log();
+console.log('------');
+console.time('runtime');
+console.log(peakIndexInMountainArrayBinarySearch([0, 1, 0]));
+console.timeEnd('runtime');
+console.log();
+console.time('runtime');
+console.log(peakIndexInMountainArrayBinarySearch([0, 2, 1, 0]));
+console.timeEnd('runtime');
+console.log();
+console.time('runtime');
+console.log(peakIndexInMountainArrayBinarySearch([
+    24,
+    69,
+    100,
+    99,
+    79,
+    78,
+    67,
+    36,
+    26,
+    19,
+]));
 console.timeEnd('runtime');
 console.log();
