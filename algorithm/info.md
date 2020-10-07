@@ -1,9 +1,9 @@
 # Algorithms
 
 - quick sort: [ x ] [ ] [ ]
-- merge sort: [ ] [ ] [ ]
-- insertion sort: [ ] [ ] [ ]
-- binary search: [ ] [ ] [ ]
+- insertion sort: [ x ] [ ] [ ]
+- binary search on array: [ x ] [ ] [ ]
+- binary search on BST: [ ] [ ] [ ]
 - depth first search: [ ] [ ] [ ]
 - breadth first search: : [ ] [ ] [ ]
 - topological sort: [ ] [ ] [ ]
