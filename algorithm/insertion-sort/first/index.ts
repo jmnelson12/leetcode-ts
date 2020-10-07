@@ -1,9 +1,9 @@
 /*
-  Space Complexity:
+  Space Complexity: O(1)
 
   Time Complexity:
-    Avg:
-    Worst:
+    Avg: O(n^2)
+    Worst: O(n^2)
 
 */
 
@@ -26,9 +26,21 @@ function swap(arr: number[], i: number, j: number) {
   arr[i] = arr[j]
   arr[j] = temp
 }
-
 // Implementation
-function algoFn() {}
+function insertionSort(arr: number[]): number[] {
+  for (let i = 1; i < arr.length; i++) {
+    let j = i
+    let y = i - 1
+
+    while (y >= 0 && arr[j] < arr[y]) {
+      swap(arr, j, y)
+      j--
+      y--
+    }
+  }
+
+  return arr
+}
 
 // Testing
 const small = generateArrOfRandomNumbers(10)
@@ -42,6 +54,16 @@ console.log(`large arr: [${large}]\n`)
 console.log('===========================\n===========================\n')
 
 console.time('runtime')
-console.log('function goes here...')
+console.log(`sorted small arr: [${insertionSort(small)}]\n`)
+console.timeEnd('runtime')
+console.log()
+
+console.time('runtime')
+console.log(`sorted medium arr: [${insertionSort(medium)}]\n`)
+console.timeEnd('runtime')
+console.log()
+
+console.time('runtime')
+console.log(`sorted large arr: [${insertionSort(large)}]\n`)
 console.timeEnd('runtime')
 console.log()
