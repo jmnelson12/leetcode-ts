@@ -34,69 +34,78 @@
 class TrieNode {
   /* --------------------------------- FIELDS --------------------------------- */
   public keys: Map<string, TrieNode>
-  public end: boolean
+  private _end: boolean
 
   constructor() {
     this.keys = new Map()
-    this.end = false
+    this._end = false
   }
 
   /* ---------------------------- GETTERS & SETTERS --------------------------- */
-  set setEnd(value: boolean) {
-    this.end = value
+  set end(value: boolean) {
+    this._end = value
   }
-  get getEnd() {
-    return this.end
+  get end() {
+    return this._end
   }
-
-  /* --------------------------------- METHODS -------------------------------- */
 }
 
 class Trie {
-  /* --------------------------------- FIELDS --------------------------------- */
-  public root: TrieNode
+  private root: TrieNode
 
   constructor() {
     this.root = new TrieNode()
   }
 
-  /* --------------------------------- METHODS -------------------------------- */
-  public add(input: string, node = this.root) {
-    // add string to trie
-    if (!input.length) {
-      node.setEnd = true
+  public add(str: string, node = this.root) {
+    // no more string left? set node as end and return
+    if (!str.length) {
+      node.end = true
       return
     }
 
-    if (!node.keys.has(input[0])) {
-      node.keys.set(input[0], new TrieNode())
+    const firstChar = str[0]
+    // if char not in Map, add it
+    if (!node.keys.has(firstChar)) {
+      node.keys.set(firstChar, new TrieNode())
     }
 
-    return this.add(input.substring(1), node.keys.get(input[0]))
+    // go to the next char in the string
+    // 'abcd' => 'bcd'
+    return this.add(str.substr(1), node.keys.get(firstChar))
   }
-
-  public isWord(word: string) {
+  public isWord(str: string) {
     let node = this.root
 
-    while (word.length > 1) {
-      if (!node.keys.has(word[0])) return false
+    while (str.length > 1) {
+      const firstChar = str[0]
+      // if char not in Map
+      if (!node.keys.has(firstChar)) return false
 
-      node = node.keys.get(word[0])
-      word = word.substring(1)
+      // go to the next node that had the char
+      node = node.keys.get(firstChar)
+      // go to next char
+      str = str.substr(1)
     }
 
-    return node.keys.has(word) && node.keys.get(word).getEnd
+    // is letter in Map and are we at the end of the word
+    return node.keys.has(str) && node.keys.get(str).end
   }
 
   private appendStrToArr(node: TrieNode, str: string, words: string[]) {
+    // if there are characters in the Trie,
+    // loop through leters and append them
     if (node.keys.size !== 0) {
-      for (let letter of node.keys.keys()) {
-        this.appendStrToArr(node.keys.get(letter), str.concat(letter), words)
+      for (let char of node.keys.keys()) {
+        this.appendStrToArr(node.keys.get(char), str.concat(char), words)
       }
-      if (node.getEnd) {
+
+      // if this is the end node, push str to word
+      if (node.end) {
         words.push(str)
       }
     } else {
+      // otherwise add str to words if it exists
       str.length > 0 && words.push(str)
       return
     }
