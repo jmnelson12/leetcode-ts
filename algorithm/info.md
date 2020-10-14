@@ -1,8 +1,8 @@
 # Algorithms
 
-- quick sort: [ x ] [ ] [ ]
-- insertion sort: [ x ] [ ] [ ]
-- binary search on array: [ x ] [ ] [ ]
+- quick sort: [ x ] [ x ] [ ]
+- insertion sort: [ x ] [ x ] [ ]
+- binary search on array: [ x ] [ x ] [ ]
 - binary search on BST: [ ] [ ] [ ]
 - depth first search: [ ] [ ] [ ]
 - breadth first search: : [ ] [ ] [ ]

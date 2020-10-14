@@ -1,11 +1,9 @@
 # Data Structures
 
-- hash map and set: [ x ] [ ] [ ]
-- linked list: [ x ] [ ] [ ]
-- stacks and queues: [ x ] [ ] [ ]
-- tree: [ x ] [ ] [ ]
-- trie: [ ] [ ] [ ]
-- graph: [ ] [ ] [ ]
-- heaps: [ ] [ ] [ ]
+- hash map and set: [ x ] [ x ] [ ] [ ]
+- linked list: [ x ] [ x ] [ ] [ ]
+- stacks and queues: [ x ] [ x ] [ ] [ ]
+- tree: [ x ] [ x ] [ ] [ ]
+- trie: [ x ] [ x ] [ ] [ ]
+- graph: [ ] [ ] [ ] [ ]
 - hash table: [ ] [ ] [ ]
-- arrays and strings
