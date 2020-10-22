@@ -33,16 +33,9 @@ class TreeNode {
 }
 
 function rangeSumBST(root: TreeNode | null, L: number, R: number): number {
-  let count = 0
+  if (!root) return 0
+  if (L > root.val) return rangeSumBST(root.right, L, R)
+  if (R < root.val) return rangeSumBST(root.left, L, R)
 
-  const preOrderTraverse = (node: TreeNode | null) => {
-    if (node) {
-      if (node.val >= L && node.val <= R) count += node.val
-      if (node.left) preOrderTraverse(node.left)
-      if (node.right) preOrderTraverse(node.right)
-    }
-  }
-  preOrderTraverse(root)
-
-  return count
+  return root.val + rangeSumBST(root.left, L, R) + rangeSumBST(root.right, L, R)
 }
